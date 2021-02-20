@@ -1,2 +1,6 @@
 .idea
 chapter1/__pycache__
+pyvenv.cfg
+bin
+include
+lib
