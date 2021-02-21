@@ -1,6 +1,10 @@
 import sys
 from random import randrange
 
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
 from chapter2.greedy_motif_search import motifs_to_profile, score
 from chapter2.profile_most_probable import profile_most_probable
 
@@ -15,15 +19,23 @@ def main():
     for i in range(t):
         dna.append(input())
 
-    motif = repeat(dna, k, t, 1000)
+    motif, score_history = repeat(dna, k, t, 200)
 
     for m in motif:
         print(m)
 
+    series = pd.Series(score_history, index=np.arange(len(score_history)))
 
-def repeat(dna: list[str], k: int, t: int, n: int) -> list[str]:
+    series.plot()
+    plt.xlabel('# of Iterations')
+    plt.ylabel('Score')
+    plt.show()
+
+
+def repeat(dna: list[str], k: int, t: int, n: int) -> (list[str], list[int]):
     min_score = sys.maxsize
     best_motifs = []
+    score_history = []
 
     for i in range(n):
         motifs = randomized_motif_search(dna, k, t)
@@ -33,7 +45,9 @@ def repeat(dna: list[str], k: int, t: int, n: int) -> list[str]:
             best_motifs = motifs
             min_score = s
 
-    return best_motifs
+        score_history.append(min_score)
+
+    return best_motifs, score_history
 
 
 def randomized_motif_search(dna: list[str], k: int, t: int) -> list[str]:
