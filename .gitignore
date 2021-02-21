@@ -4,3 +4,5 @@ pyvenv.cfg
 bin
 include
 lib
+input.txt
+output.txt
