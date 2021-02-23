@@ -1,4 +1,4 @@
-from chapter2.base_map import base_map
+from chapter3.base_map import base_map
 
 
 def main():

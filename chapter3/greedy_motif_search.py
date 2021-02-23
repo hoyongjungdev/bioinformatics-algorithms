@@ -1,5 +1,5 @@
-from chapter2.base_map import base_map
-from chapter2.profile_most_probable import profile_most_probable
+from chapter3.base_map import base_map
+from chapter3.profile_most_probable import profile_most_probable
 
 
 def main():

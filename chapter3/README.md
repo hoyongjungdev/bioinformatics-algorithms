@@ -1,5 +1,5 @@
 ## Reference
-- Bioinformatics Algorithms: An Active Learning Approach, Chapter 2
+- Bioinformatics Algorithms: An Active Learning Approach, Chapter 3
 - https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2
 
 ## Randomized Motif Search Algorithm
@@ -7,7 +7,7 @@
 - Run script
 
 ```bash
-$ python3 -m chapter2.randomized_motif_search < input.txt > output.txt
+$ python3 -m chapter3.randomized_motif_search < input.txt > output.txt
 ```
 
 - The plot of scores by the number of iterations (iterated 200 times)

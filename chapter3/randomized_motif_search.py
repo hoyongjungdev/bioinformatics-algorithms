@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from chapter2.greedy_motif_search import motifs_to_profile, score
-from chapter2.profile_most_probable import profile_most_probable
+from chapter3.greedy_motif_search import motifs_to_profile, score
+from chapter3.profile_most_probable import profile_most_probable
 
 
 def main():
