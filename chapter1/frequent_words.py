@@ -1,11 +1,13 @@
 import sys
 
+from common.string import join_sorted
+
 
 def main():
     text = input()
     k = int(input())
 
-    print(to_string(frequent_words(text, k)))
+    print(join_sorted(frequent_words(text, k)))
 
 
 def frequent_words(text: str, k: int) -> list:
@@ -39,17 +41,6 @@ def max_map(freq_map: dict) -> int:
             max_val = v
 
     return max_val
-
-
-def to_string(words: list) -> str:
-    sorted_words = sorted(words)
-    return ' '.join(sorted_words)
-
-
-def test():
-    assert to_string(frequent_words('ACAACTATGCATCACTATCGGGAACTATCCT', 5)) == 'ACTAT'
-    assert to_string(frequent_words('CGATATATCCATAG', 3)) == 'ATA'
-    assert to_string(frequent_words('ACGTTGCATGTCGCATGATGCATGAGAGCT', 4)) == 'CATG GCAT'
 
 
 if __name__ == '__main__':

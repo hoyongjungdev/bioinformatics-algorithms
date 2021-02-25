@@ -1,4 +1,5 @@
-from .frequent_words import frequency_table, to_string
+from common.string import join_sorted
+from .frequent_words import frequency_table
 
 
 def main():
@@ -9,7 +10,7 @@ def main():
     l = int(split[1])
     t = int(split[2])
 
-    print(to_string(find_clump(text, k, l, t)))
+    print(join_sorted(find_clump(text, k, l, t)))
 
 
 def find_clump(text: str, k: int, l: int, t: int) -> list[str]:
@@ -25,17 +26,6 @@ def find_clump(text: str, k: int, l: int, t: int) -> list[str]:
                 patterns.add(key)
 
     return list(patterns)
-
-
-def test():
-    assert to_string(
-        find_clump(
-            'CGGACTCGACAGATGTGAAGAAATGTGAAGACTGAGTGAAGAGAAGAGGAAACACGACACGACATTGCGACATAATGTACGAATGTAATGTGCCTATGGC',
-            5,
-            75,
-            4
-        )
-    ) == 'AATGT CGACA GAAGA'
 
 
 if __name__ == '__main__':
